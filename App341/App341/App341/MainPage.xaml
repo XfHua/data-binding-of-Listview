@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App341.MainPage">
+
+    <ListView x:Name="ListViewServicos" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell Height="80">
+                    
+                    <StackLayout Orientation="Vertical" Padding="10" Spacing="2" HeightRequest="80">
+                        
+                        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                            <Image Source="arrow" HorizontalOptions="Start"></Image>
+                            <Label Text="{Binding Tipo}" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" WidthRequest="100">
+                                <Label Text="{Binding MargemTotalFormatada}" TextColor="#555555" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                <Label Text="Uso:" TextColor="#555555" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding MargemUtilizadaFormatada}" TextColor="#555555" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                <Label Text="Disponível:" TextColor="#555555" HorizontalOptions="StartAndExpand" FontAttributes="Bold"/>
+                                <Label Text="{Binding MargemFormatada}" TextColor="#555555" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                            </StackLayout>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
